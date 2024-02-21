@@ -1,0 +1,249 @@
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+}
+
+/* cores das seções */
+.secao-um {
+    background: #3000d2;
+  }
+.segunda {
+    background: #160061;
+  }
+.terceira {
+    background: #3000d2;
+  }
+
+.secao-um, .segunda, .terceira {
+  padding: 80px;
+}
+
+.titulo-principal { 
+  font-size: 75px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  padding: 32px 0; 
+/* espaçamento em cima e em baixo de 32px e na esquerda e direita de 0px */
+}
+
+.titulo-secundario { 
+  font-size: 42px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 32px 0;
+}
+
+p {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.texto-superior-um {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.texto-superior-dois, .texto-superior-tres {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.paragrafo-padrao {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;  
+/* espaçamento de linhas */
+  padding-bottom: 32px;
+/* aplica o padding apenas em baixo */
+}
+
+.paragrafo-menor {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;  
+}
+
+.titulo-terciario {
+  font-size: 25px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.data {
+  font-size: 19px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+#rodape {
+  background: #160061;
+  font-size: 18px;
+  padding: 32px 0;
+  text-align: center;
+/* centraliza o texto */
+}
+
+svg {
+  fill: white;
+/* para preencher as imagens svg em branco (não funcionou na minha kkk, pois peguei o html com especificação de cor pros svg's)*/
+}
+
+.botao-chamada { 
+  font-family: 'JetBrains Mono', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  background: #03fb93;
+  padding: 20px 50px;
+  text-align: center;
+  border: none;
+  margin: 0;
+  cursor: pointer; 
+}
+
+.lista-cartoes {
+  list-style: none; 
+  /* remove as bolinhas da lista */
+  display: flex;
+  gap: 10px;
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+.cartao {
+  border: 1px solid gray;
+  padding: 15px;
+  width: 100%;
+/* DEIXA O TAMANHO DOS CARTÕES IGUAIS */
+  gap: 15px;
+}
+
+.data {
+  padding: 10px 0;  
+}
+
+.rodape-link {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* para mudar os aspectos quando o mause se encontra em cima do link */
+.rodape-link:hover {
+  text-decoration: underline;
+/* adiciona o underline no link quando o mause está em cima do link */
+}
+
+.contatos-redes {
+  background: #160061;
+  border-top: 1px solid gray;
+  display: flex;
+  gap: 20px;
+  padding: 32px 25px;
+}
+
+.redes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.contatos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+/* RESPONSIVIDADE */
+/* instruções para determinados tamanhos de tela */
+@media (max-width: 1068px) {
+  .lista-cartoes {
+    flex-direction: column;
+/* muda para coluna quando a lista de cartão estoura a tela */
+  }
+}
+
+@media (max-width: 594px) {
+  .titulo-principal { 
+    font-size: 45px;
+  }
+  
+  .contatos-redes {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contatos {
+    gap: 16px;
+  }
+}
+
+
+
+/* MODAL */
+.modal[open] {
+/* so vai estilizar o modal quando ele for aberto */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #191c1f;
+  border: 2px solid blue;
+  max-width: 400px;
+  gap: 16px;
+  
+}
+
+/* muda como o modal é apresentado na tela */
+.modal::backdrop {
+  background-color: rgba(0,0,0,0.7);
+/*  rgb, a -> transparencia (1 solido, 0 vazio)  */
+}
+
+
+.cabecalho-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botao-inscricao {
+  font-family: 'JetBrains Mono', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+  background: #03fb93;
+  padding: 10px 30px;
+  text-align: center;
+  border: none;
+  margin: 0;
+  cursor: pointer; 
+    
+}
+
+.botao-fechar-modal {
+  background-color: #51543d;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #adb5bd;
+}
+
+.input-modal {
+  padding: 14px 20px;
+  border: 1px solid #51543d;
+  background-color: #191c1f;
+  color: white;
+  font-family: 'JetBrains Mono', 'sans-serif';
+}
